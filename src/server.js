@@ -9,7 +9,8 @@ const server = express();
 server.use('/assets', express.static('assets'));
 
 server.get('/', (req, res) => {
-  const isMobile = true;
+
+  const isMobile = true; // assume it's mobile
   const initialState = { isMobile };
   const appString = renderToString(<App {...initialState} />);
 
@@ -21,4 +22,3 @@ server.get('/', (req, res) => {
 });
 
 server.listen(8080);
-console.log('listening');
